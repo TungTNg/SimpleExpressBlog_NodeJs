@@ -55,6 +55,17 @@ app.post("/blogs", function(req, res) {
    
 });
 
+// SHOW ROUTE
+app.get("/blogs/:id", function(req, res) {
+    Blog.findById(req.params.id, function(err, foundBlog) {
+        if(err) {
+            res.redirect("/SimpleExpressBlog/blogs");
+        } else {
+            res.render("show", {blog: foundBlog});
+        }
+    });
+});
+
 // RUN CONFIG
 app.listen(3084, function() {
     console.log("The Simple Express Blog Server Has Started!");
