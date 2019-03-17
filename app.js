@@ -10,6 +10,7 @@ app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
+mongoose.set("useFindAndModify", false);
 
 // MONGOOSE/MODEL CONFIG
 var blogSchema = new mongoose.Schema({
@@ -86,6 +87,18 @@ app.put("/blogs/:id", function(req, res) {
             res.redirect("/SimpleExpressBlog/blogs");
         } else {
             res.redirect("/SimpleExpressBlog/blogs/req.params.id");
+        }
+    });
+});
+
+// DELETE ROUTE
+app.delete("/blogs/:id", function(req, res) {
+    // destroy blog
+    Blog.findByIdAndRemove(req.params.id, function(err) {
+        if(err) {
+            res.redirect("/SimpleExpressBlog/blogs");
+        } else {
+            res.redirect("/SimpleExpressBlog/blogs");
         }
     });
 });
