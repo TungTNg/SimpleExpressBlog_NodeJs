@@ -6,4 +6,4 @@ This project was generated with:
 * Database: [MongoDB](https://www.mongodb.com/) version 4.0
 * ORM: [Moongoose](https://www.mongodb.com/) version 5.4.19
 
-Live demo of the whole project: [https://tungthecoder.com/SimpleExpressBlog/](https://tungthecoder.com/SimpleExpressBlog/)
+Live demo of the whole project: [https://tungthecoder.dev/SimpleExpressBlog/](https://tungthecoder.dev/SimpleExpressBlog/)
